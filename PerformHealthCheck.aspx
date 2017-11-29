@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PerformHealthCheck.aspx.cs" Inherits="AdaptivaClientPortal.PerformHealthCheck" %>
+<%@ Page Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="PerformHealthCheck.aspx.cs" Inherits="AdaptivaClientPortal.PerformHealthCheck" %>
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -11,12 +11,12 @@
         </Triggers>
     </asp:UpdatePanel>
     <div class="j-row">
-        <h3 style="font-size: 36px; font-weight: bolder;"><%=Title%></h3>
+        <h3 style="font-size: 36px; font-weight: bolder; margin-bottom: 2.618rem;"><%=Title%></h3>
     </div>
 
     <asp:UpdateProgress runat="server" AssociatedUpdatePanelID="UpdatePanel2">
         <ProgressTemplate>
-            <asp:Image ID="Image1" runat="server" ImageUrl="~/progress.gif" />
+            <asp:Image ID="Image1" runat="server" ImageUrl="~/progress.gif" CssClass="health-check--loading" />
         </ProgressTemplate>
     </asp:UpdateProgress>
 
@@ -25,7 +25,7 @@
             <ContentTemplate>
                 <asp:Table ID="Table2" Width="100%" runat="server">
                     <asp:TableRow CssClass="j-row">
-                        <asp:TableCell CssClass="j-col j-col-8 health-check--form">
+                        <asp:TableCell CssClass="j-col j-col-8 health-check--form wrap">
                             <asp:Panel ID="PnlForm" runat="server" Style="padding: 10px 10px 10px 10px" GroupingText="Data Form" Visible="false">
                                 <asp:Table ID="tblDataForm" CssClass="checks-data-forms" runat="server"></asp:Table>
                                 <asp:PlaceHolder ID="plhForm" runat="server"></asp:PlaceHolder>
@@ -41,14 +41,14 @@
                                             <asp:TableCell>
                                                 <asp:UpdateProgress runat="server" ID="PageUpdateProgress" AssociatedUpdatePanelID="UpdatePanel1">
                                                     <ProgressTemplate>
-                                                        <div style="position: absolute">
+                                                        <div style="position: absolute; right: 0;">
                                                             <asp:Image ID="progress1" runat="server" ImageUrl="~/progress.gif" Width="40" Height="40" Visible="true" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
                                                 <asp:Image ID="ImgHealthCheck" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
                                             </asp:TableCell>
-                                            <asp:TableCell></asp:TableCell>
+                                            <asp:TableCell CssClass="health-check--error"></asp:TableCell>
                                             <asp:TableCell RowSpan="3">
                                                 <asp:Image ID="imgStatus" runat="server" ImageUrl="~/Success.png" Width="80" Height="80" CssClass="hidden" />
                                             </asp:TableCell>
@@ -58,33 +58,33 @@
                                             <asp:TableCell>
                                                 <asp:UpdateProgress runat="server" ID="UpdateProgress2" AssociatedUpdatePanelID="UpdatePanel1">
                                                     <ProgressTemplate>
-                                                        <div style="position: absolute">
+                                                        <div style="position: absolute; right: 0;">
                                                             <asp:Image ID="progress2" runat="server" ImageUrl="~/progress.gif" Width="40" Height="40" Visible="true" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
                                                 <asp:Image ID="ImgRemediation" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
                                             </asp:TableCell>
-                                            <asp:TableCell></asp:TableCell>
+                                            <asp:TableCell CssClass="health-check--error"></asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow>
                                             <asp:TableCell>Post Remediation:</asp:TableCell>
                                             <asp:TableCell>
                                                 <asp:UpdateProgress runat="server" ID="UpdateProgress3" AssociatedUpdatePanelID="UpdatePanel1">
                                                     <ProgressTemplate>
-                                                        <div style="position: absolute">
+                                                        <div style="position: absolute; right: 0;">
                                                             <asp:Image ID="progress3" runat="server" ImageUrl="~/progress.gif" Width="40" Height="40" Visible="true" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
                                                 <asp:Image ID="ImgPostremediation" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
                                             </asp:TableCell>
-                                            <asp:TableCell></asp:TableCell>
+                                            <asp:TableCell CssClass="health-check--error"></asp:TableCell>
                                         </asp:TableRow>
-                                        <asp:TableRow>
+                                        <asp:TableRow CssClass="run-on">
                                             <asp:TableCell>
                                                 <asp:Label ID="lblRunOn" runat="server" Text="Run On:"></asp:Label></asp:TableCell>
-                                            <asp:TableCell>
+                                            <asp:TableCell CssClass="run-on--input">
                                                 <asp:TextBox ID="tbxHost" runat="server" OnInit="tbxHost_Init"></asp:TextBox></asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow>
@@ -93,7 +93,7 @@
                                             <asp:TableCell>
                                                 <asp:CheckBox ID="CbxAutoRemediate" runat="server" Checked="True" /></asp:TableCell>
                                         </asp:TableRow>
-                                        <asp:TableRow>
+                                        <asp:TableRow CssClass="run-check">
                                             <asp:TableCell>
                                                 <asp:Button ID="btnRunHealthCheck" runat="server" Text="Run" OnClientClick="hideImage();" OnClick="btnRunHealthCheck_Click" CssClass="run-check-btn" /></asp:TableCell>
                                         </asp:TableRow>
