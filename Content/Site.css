@@ -1,0 +1,438 @@
+﻿/* Kokkaku Framework */
+html, body {
+  font-size: 16px;
+  overflow-x: hidden;
+}
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+.j-row {
+  display: block;
+  clear: both;
+  overflow: hidden;
+}
+.j-col-1 {
+  width: 8.33%;
+  width: calc(100% / 12);
+}
+.j-col-2 {
+  width: 16.66%;
+  width: calc(100% / 12 * 2);
+}
+.j-col-3 {
+  width: 25%;
+}
+.j-col-4 {
+  width: 33.33%;
+  width: calc(100% / 12 * 4);
+}
+.j-col-5 {
+  width: 41.66%;
+  width: calc(100% / 12 * 5);
+}
+.j-col-6 {
+  width: 50%;
+}
+.j-col-7 {
+  width: 58.33%;
+  width: calc(100% / 12 * 7);
+}
+.j-col-8 {
+  width: 66.66%;
+  width: calc(100% / 12 * 8);
+}
+.j-col-9 {
+  width: 75%;
+}
+.j-col-10 {
+  width: 83.33%;
+  width: calc(100% / 12 * 10);
+}
+.j-col-11 {
+  width: 91.66%;
+  width: calc(100% / 12 * 11);
+}
+.j-col-12 {
+  width: 100%;
+}
+.push-1 {
+  margin-left: 8.33%;
+}
+.push-2 {
+  margin-left: 16.67%;
+}
+.push-3 {
+  margin-left: 25%;
+}
+.push-4 {
+  margin-left: 33.33%;
+}
+.push-5 {
+  margin-left: 41.67%;
+}
+.push-6 {
+  margin-left: 50%;
+}
+.push-7 {
+  margin-left: 58.33%;
+}
+.push-8 {
+  margin-left: 66.67%;
+}
+.push-9 {
+  margin-left: 75%;
+}
+.push-10 {
+  margin-left: 83.33%;
+}
+.push-11 {
+  margin-left: 91.67%;
+}
+@media screen and (max-width: 640px) {
+  .push-1,
+  .push-2,
+  .push-3,
+  .push-4,
+  .push-5,
+  .push-6,
+  .push-7,
+  .push-8,
+  .push-9,
+  .push-10,
+  .push-11 {
+    margin-left: 0;
+  }
+}
+.j-col {
+  display: block !important;
+  float: left !important;
+  box-sizing: border-box;
+  padding: 0 $spacing-small;
+}
+.j-col.wrap {
+  padding: 0;
+}
+.j-col.j-col-12 {
+  float: none;
+}
+@media screen and (max-width: 640px) {
+  .j-col {
+    width: 100%;
+    float: none;
+    margin-bottom: 20px;
+    padding: 0 20px;
+  }
+}
+.vertical-center-row {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-pack; center;
+	-justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+.grid-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+}
+.vertical-distribute {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+.vertical-distribute.space-between {
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.vertical-distribute.space-around {
+  -ms-flex-pack: distribute;
+  justify-content: space-around;SSSS
+}
+.button {
+  display: inline-block;
+  text-align: center;
+  padding: 1rem 1.618rem;
+  text-decoration: none;
+  cursor: pointer;
+  background: #0860b8;
+  color: #fff;
+  font-weight: 700;
+  transition: 400ms ease;
+}
+.button:hover {
+  background: #073971;
+}
+.button.white {
+  background: #fff;
+  color: #073971;
+}
+.button.white:hover {
+  background: #073971;
+  color: #fff;
+}
+.button.orange {
+  background: #ff902c;
+  color: #fff;
+}
+.button.orange:hover {
+  background: #ed4e39;
+}
+input[type="checkbox"] {
+	margin-right: 0.618rem;
+}
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Health Checks Table */
+table.checks-table,
+table.checks-table tbody,
+table.checks-table tr,
+table.checks-table > tbody > tr {
+	display: block;
+	width: 100%;
+}
+table.checks-table > tbody > tr {
+	display: -webkit-box;
+	display: -ms-flexbox;
+  	display: flex;
+  	-webkit-box-orient: horizontal;
+  	-webkit-box-direction: normal;
+ 	-ms-flex-direction: row;
+ 	flex-direction: row;
+ 	-ms-flex-wrap: wrap;
+ 	flex-wrap: wrap;
+	-webkit-box-align: start;
+ 	-ms-flex-align: start;
+	align-items: flex-start;
+}
+table.checks-table > tbody > tr > td {
+	display: block;
+	float: left;
+	width: 33.33%;
+	-ms-flex-item-align: stretch;
+	align-self: stretch;
+	position: relative;
+	padding: 1rem;
+}
+table.checks-table > tbody > tr > td > a {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 100%;	
+	text-align: center;
+	border: 2px solid #eee;
+	padding: 2rem;
+	box-shadow: 0 3px 4px 0 rgba(0,0,0,0.1);
+	transition: 300ms ease;
+}
+table.checks-table > tbody > tr > td > a:hover,
+table.checks-table > tbody > tr > td > a:focus {
+	outline: none;
+	text-decoration: none;
+	color: #0860b8;
+}
+table.checks-table > tbody > tr > td > a:hover {
+	box-shadow: 0 10px 16x -6px rgba(0,0,0,0.2);
+}
+table.checks-table > tbody > tr > td > a > div {
+	background: white;
+	height: 100%;
+}
+.checks--icon td {
+	display: block;
+	margin: 0 auto 1.618rem;
+}
+.checks--title {
+	font-size: 16px;
+	color: #404041;
+}
+.checks--counter {
+	display: inline-block;
+}
+/* Perform Health Checks */
+input.run-check-btn {
+	display: block;
+	width: 100%;
+	margin: 1.618rem 0;
+	max-width: 100%;
+	background: #0860b8;
+	color: #fff;
+	padding: 1rem 1.618rem;
+	text-align: center;
+	-webkit-appearance: none !important;
+	transition: 300ms ease;
+}
+input.run-checks-btn:hover {
+	background: #073971;
+}
+.checks-data-forms,
+.checks-data-forms table,
+.checks-data-forms tbody,
+.checks-data-forms tr,
+.checks-data-forms tr td {
+	display: block;
+	width:100%;
+	overflow: hidden;
+}
+.checks-data-forms tr {
+	display: block;
+	margin-bottom: 1.618rem;
+}
+.Adaptiva_Group tr > td {
+	display: block;
+	float: left;
+}
+.Adaptiva_Group tr > td:first-child {
+	width: 25%;
+}
+.Adaptiva_Group tr > td:last-child {
+	width: 100%;
+}
+.Adaptiva_Group tr > td:nth-child(2) {
+	width: 75%;
+	padding-right: 1rem;
+}
+.Adaptiva_Group tr > td input,
+.Adaptiva_Group tr > td select {
+	width: auto !important;
+}
+.health-check--results table,
+.health-check--results tbody,
+.health-check--results tr {
+	display: block;
+	width: 100%;
+}
+.health-check--results tr {
+	overflow: hidden;
+	clear: both;
+	margin-bottom: 1rem;
+}
+.health-check--results tr td {
+	display: block;
+	float: left;
+	width: 50%;
+	text-align: right;
+}
+.health-check--results tr td:first-child {
+	text-align: left;
+}
+/* Health Checks List */
+.health-checks-table {
+	margin-bottom: 2.618rem;
+}
+.health-checks-table,
+.health-checks-table table,
+.health-checks-table tbody,
+.health-checks-table tr,
+.health-checks-table td {
+	display: block;
+	width: 100%;
+}
+.health-checks-table a {
+	display: block;
+	padding: 1em .26em;
+	border-bottom: 2px solid #eee;
+	transition: 300ms ease;
+	color: #404041;
+}
+.health-checks-table a:hover {
+	text-decoration: none;
+	color: #0860b8;
+	border-color: #0860b8;
+}
+.health-checks-table a tbody > tr:first-child {
+	display: none;
+}
+/* Wrapping element */
+/* Set some basic padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Set widths on the form inputs since otherwise they're 100% wide
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+*/
+
+/* Responsive: Portrait tablets and up */
+@media screen and (min-width: 768px) {
+    .body-content {
+        padding: 0;
+    }
+}
+.jumbotron {
+	background: #0860b8;
+	border-radius: 0 !important;
+	position: relative;
+	text-align: center;
+	color: #fff;
+}
+.jumbotron::before,
+.jumbotron::after {
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	background: #0860b8;
+}
+.jumbotron::before {
+	right: 100%;
+}
+.jumbotron::after {
+	left: 100%;
+}
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 99;
+    opacity: 0.8;
+    filter: alpha(opacity=80);
+    -moz-opacity: 0.8;
+    min-height: 100%;
+    width: 100%;
+}
+.loading {
+    font-family: Arial;
+    font-size: 10pt;
+    border: 5px solid #67CFF5;
+    width: 200px;
+    height: 100px;
+    display: none;
+    position: fixed;
+    background-color: White;
+    z-index: 999;
+}
+legend {
+	padding-bottom: 1rem;  
+	border-bottom: 2px solid #eee; 
+}
+
