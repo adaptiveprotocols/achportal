@@ -136,24 +136,6 @@ div[id*="UpdateProgress"] {
   -webkit-animation-name: nodeInserted;
 }
 
-.Adaptiva_Group tr>td {
-  display: block;
-  float: left;
-}
-
-/*.Adaptiva_Group tr>td:first-child {
-  width: 25%;
-}
-
-.Adaptiva_Group tr>td:last-child {
-  width: 100%;
-}
-
-.Adaptiva_Group tr>td:nth-child(2) {
-  width: 75%;
-  padding-right: 1rem;
-}*/
-
 .Adaptiva_Group tr>td input, .Adaptiva_Group tr>td select {
   width: auto !important;
 }
