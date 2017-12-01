@@ -48,7 +48,7 @@
                                                 </asp:UpdateProgress>
                                                 <asp:Image ID="ImgHealthCheck" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="health-check--error"></asp:TableCell>
+                                            <asp:TableCell CssClass="health-check--msg"></asp:TableCell>
                                             <asp:TableCell RowSpan="3">
                                                 <asp:Image ID="imgStatus" runat="server" ImageUrl="~/Success.png" Width="80" Height="80" CssClass="hidden" />
                                             </asp:TableCell>
@@ -65,7 +65,7 @@
                                                 </asp:UpdateProgress>
                                                 <asp:Image ID="ImgRemediation" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="health-check--error"></asp:TableCell>
+                                            <asp:TableCell CssClass="health-check--msg"></asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow>
                                             <asp:TableCell>Post Remediation:</asp:TableCell>
@@ -79,7 +79,7 @@
                                                 </asp:UpdateProgress>
                                                 <asp:Image ID="ImgPostremediation" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="health-check--error"></asp:TableCell>
+                                            <asp:TableCell CssClass="health-check--msg"></asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow CssClass="run-on">
                                             <asp:TableCell>
@@ -109,12 +109,27 @@
             </Triggers>
         </asp:UpdatePanel>
     </div>
-
-
     <script type="text/javascript">
         function hideImage() {
             document.getElementById("<%=imgStatus.ClientID%>").style.display = 'none';
         }
-    </script>
+        (function(){
 
+          var added = function(event) {
+            if (event.animationName == 'nodeInserted') {
+              var rows = $('.Adaptiva_Group').find('tr');
+              rows.each(function(){
+                if ($(this).children('td').length > 2) {
+                  $(this).addClass('is-grid');
+                }
+              });
+              console.log('Added node to DOM');
+            }
+          };
+          document.addEventListener('animationstart', added, false);
+          document.addEventListener('MSAnimationStart', added, false);
+          document.addEventListener('webkitAnimationStart', added, false);
+
+        })();
+    </script>
 </asp:Content>
