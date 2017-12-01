@@ -42,15 +42,15 @@
                                                 <asp:UpdateProgress runat="server" ID="PageUpdateProgress" AssociatedUpdatePanelID="UpdatePanel1">
                                                     <ProgressTemplate>
                                                         <div style="position: absolute; right: 0;">
-                                                            <asp:Image ID="progress1" runat="server" ImageUrl="~/progress.gif" Width="40" Height="40" Visible="true" />
+                                                            <asp:Image ID="progress1" runat="server" ImageUrl="~/progress.gif" Width="26" Height="26" Visible="true" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
-                                                <asp:Image ID="ImgHealthCheck" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
+                                                <asp:Image ID="ImgHealthCheck" runat="server" ImageUrl="~/information.svg" Width="26" Height="26" Visible="true" />
                                             </asp:TableCell>
                                             <asp:TableCell CssClass="health-check--msg"></asp:TableCell>
                                             <asp:TableCell RowSpan="3">
-                                                <asp:Image ID="imgStatus" runat="server" ImageUrl="~/Success.png" Width="80" Height="80" CssClass="hidden" />
+                                                <asp:Image ID="imgStatus" runat="server" ImageUrl="~/success.svg" Width="80" Height="80" CssClass="hidden" />
                                             </asp:TableCell>
                                         </asp:TableRow>
                                         <asp:TableRow>
@@ -59,11 +59,11 @@
                                                 <asp:UpdateProgress runat="server" ID="UpdateProgress2" AssociatedUpdatePanelID="UpdatePanel1">
                                                     <ProgressTemplate>
                                                         <div style="position: absolute; right: 0;">
-                                                            <asp:Image ID="progress2" runat="server" ImageUrl="~/progress.gif" Width="40" Height="40" Visible="true" />
+                                                            <asp:Image ID="progress2" runat="server" ImageUrl="~/progress.gif" Width="26" Height="26" Visible="true" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
-                                                <asp:Image ID="ImgRemediation" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
+                                                <asp:Image ID="ImgRemediation" runat="server" ImageUrl="~/information.svg" Width="26" Height="26" Visible="true" />
                                             </asp:TableCell>
                                             <asp:TableCell CssClass="health-check--msg"></asp:TableCell>
                                         </asp:TableRow>
@@ -73,11 +73,11 @@
                                                 <asp:UpdateProgress runat="server" ID="UpdateProgress3" AssociatedUpdatePanelID="UpdatePanel1">
                                                     <ProgressTemplate>
                                                         <div style="position: absolute; right: 0;">
-                                                            <asp:Image ID="progress3" runat="server" ImageUrl="~/progress.gif" Width="40" Height="40" Visible="true" />
+                                                            <asp:Image ID="progress3" runat="server" ImageUrl="~/progress.gif" Width="26" Height="26" Visible="true" />
                                                         </div>
                                                     </ProgressTemplate>
                                                 </asp:UpdateProgress>
-                                                <asp:Image ID="ImgPostremediation" runat="server" ImageUrl="~/Information.png" Width="40" Height="40" Visible="true" />
+                                                <asp:Image ID="ImgPostremediation" runat="server" ImageUrl="~/information.svg" Width="26" Height="26" Visible="true" />
                                             </asp:TableCell>
                                             <asp:TableCell CssClass="health-check--msg"></asp:TableCell>
                                         </asp:TableRow>
@@ -117,13 +117,27 @@
 
           var added = function(event) {
             if (event.animationName == 'nodeInserted') {
-              var rows = $('.Adaptiva_Group').find('tr');
+              var rows = $('#MainContent_Composite1_tblForm').find('tr');
               rows.each(function(){
-                if ($(this).children('td').length > 2) {
-                  $(this).addClass('is-grid');
+                var cells = $(this).children('td'),
+                    allCells = $(this).closest('.Adaptiva_Group').find('td');
+                if (cells.length > 2) { // if grid layout
+                  allCells.addClass('j-col j-col-3 wrap');
+                } else if (cells.length < 2) {
+                  cells.addClass('j-col j-col-12 wrap')
+                } else {
+                  $(this).find('td:first-child')
+                    .addClass('j-col j-col-3 wrap')
+                    .next()
+                    .addClass('j-col j-col-9');
+                }
+                if (cells.children('input[type="radio"]')) {
+                  $(this).find('input[type="radio"]')
+                    .parent('td')
+                    .removeClass('j-col-3 j-col-9')
+                    .addClass('j-col j-col-6 wrap has-radio');
                 }
               });
-              console.log('Added node to DOM');
             }
           };
           document.addEventListener('animationstart', added, false);
