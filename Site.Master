@@ -1,4 +1,4 @@
-<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="AdaptivaClientPortal.SiteMaster" %>
+﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="AdaptivaClientPortal.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -60,6 +60,8 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/Default.aspx">Home</a></li>
+                        <li><a runat="server" href="~/ClientHealth.aspx">Client Health</a></li>
+                        <li><a runat="server" href="~/WebWakeup.aspx">Web Wakeup</a></li>
                     </ul>
                 </div>
             </div>
