@@ -1,4 +1,4 @@
-/* Health Checks Table */
+﻿/* Health Checks Table */
 
 table.checks-table {
   padding-bottom: 1.618rem;
@@ -61,10 +61,10 @@ table.checks-table>tbody>tr>td>a>div {
   height: 100%;
 }
 
-.health-check--icon {
+/*.health-check--icon {
   width: 68px;
   margin-right: 1.618rem;
-}
+}*/
 
 .health-check--icon td {
   display: block;
@@ -351,11 +351,11 @@ div[id*="_TimePicker"] > select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack; center;
+  /*-webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: center;*/
 }
 
 .health-checks-table a:hover {

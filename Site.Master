@@ -1,4 +1,4 @@
-﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="AdaptivaClientPortal.SiteMaster" %>
+﻿﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="AdaptivaClientPortal.SiteMaster" %>
 
 <!DOCTYPE html>
 
@@ -18,7 +18,7 @@
 </head>
 <body>
     <form runat="server">
-        <asp:ScriptManager runat="server" AsyncPostBackTimeout="300">
+        <asp:ScriptManager runat="server" AsyncPostBackTimeout="360">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see http://go.microsoft.com/fwlink/?LinkID=301884 --%>
                 <%--Framework Scripts--%>

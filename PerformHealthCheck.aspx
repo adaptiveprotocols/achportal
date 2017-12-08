@@ -121,10 +121,10 @@
 
             var added = function(event) {
                 if (event.animationName == 'nodeInserted') {
-
+                  
                     var rows = $('#MainContent_Composite1_tblForm').find('tr'),
                         timePicker = $('[id*="TimePicker"]');
-
+                        
                     rows.each(function () {
                         var cells = $(this).children('td'),
                             allCells = $(this).closest('.Adaptiva_Group').find('td');
@@ -153,7 +153,7 @@
                     }
                 }
             };
-
+            
             document.addEventListener('animationstart', added, false);
             document.addEventListener('MSAnimationStart', added, false);
             document.addEventListener('webkitAnimationStart', added, false);
