@@ -26,16 +26,16 @@
             <ContentTemplate>
                 <asp:Table ID="Table2" Width="100%" runat="server">
                     <asp:TableRow CssClass="j-row">
-                        <asp:TableCell CssClass="j-col j-col-8 health-check--form wrap">
-                            <asp:Panel ID="PnlForm" runat="server" Style="padding: 10px 10px 10px 10px" GroupingText="Data Form" Visible="false">
+                        <asp:TableCell CssClass="j-col j-col-8 health-check--form">
+                            <asp:Panel ID="PnlForm" runat="server" GroupingText="Data Form" Visible="false">
                                 <asp:Table ID="tblDataForm" CssClass="checks-data-forms" runat="server"></asp:Table>
                                 <asp:PlaceHolder ID="plhForm" runat="server"></asp:PlaceHolder>
                                 <br />
                             </asp:Panel>
                         </asp:TableCell>
-                        <asp:TableCell CssClass="j-col j-col-3 push-1 health-check--results">
+                        <asp:TableCell CssClass="j-col j-col-4 health-check--results">
                             <div class="j-row">
-                                <asp:Panel ID="pnlResults" runat="server" Style="padding: 10px 10px 10px 10px" GroupingText="Results" Visible="false">
+                                <asp:Panel ID="pnlResults" runat="server" GroupingText="Results" Visible="false">
                                     <asp:Table ID="tblHealthCheckResults" runat="server">
                                         <asp:TableRow>
                                             <asp:TableCell>Health Check:</asp:TableCell>
@@ -83,10 +83,10 @@
                                             <asp:TableCell>
                                                 <asp:Label ID="lblRunOn" runat="server" Text="Run On:"></asp:Label>
                                             </asp:TableCell>
-                                            <asp:TableCell CssClass="run-on--input">
+                                            <asp:TableCell CssClass="run-on--input j-col j-col-8 wrap">
                                                 <asp:TextBox ID="tbxHost" runat="server" OnInit="tbxHost_Init"></asp:TextBox>
                                             </asp:TableCell>
-                                            <asp:TableCell>
+                                            <asp:TableCell CssClass="run-on--lookup j-col j-col-3 push-1 wrap">
                                                 <asp:ImageButton ID="imgBtnPCLookup" Width="32" Height="32" runat="server" OnClientClick="SelectName();" ImageUrl="~/Images/pclookup_blue.png" />
                                             </asp:TableCell>
                                         </asp:TableRow>
@@ -117,18 +117,23 @@
     </div>
 
   <script type="text/javascript">
-        (function () {
+        (function() {
 
-            var added = function (event) {
+            var added = function(event) {
                 if (event.animationName == 'nodeInserted') {
-                    var rows = $('#MainContent_Composite1_tblForm').find('tr');
+
+                    var rows = $('#MainContent_Composite1_tblForm').find('tr'),
+                        timePicker = $('[id*="TimePicker"]');
+
                     rows.each(function () {
                         var cells = $(this).children('td'),
                             allCells = $(this).closest('.Adaptiva_Group').find('td');
                         if (cells.length > 2) { // if grid layout
                             allCells.addClass('j-col j-col-3 wrap');
                         } else if (cells.length < 2) {
-                            cells.addClass('j-col j-col-12 wrap')
+                            cells.addClass('j-col j-col-12 wrap');
+                        } else if (cells.length > 6){
+                            cells.addClass('j-col j-col-2 wrap');
                         } else {
                             $(this).find('td:first-child')
                               .addClass('j-col j-col-3 wrap')
@@ -142,8 +147,13 @@
                               .addClass('j-col j-col-6 wrap has-radio');
                         }
                     });
+                    // Strip style attribute from certain elements
+                    if (timePicker.length > 0) {
+                      timePicker.find('*').removeAttr('style');
+                    }
                 }
             };
+
             document.addEventListener('animationstart', added, false);
             document.addEventListener('MSAnimationStart', added, false);
             document.addEventListener('webkitAnimationStart', added, false);
