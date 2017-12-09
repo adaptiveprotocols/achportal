@@ -236,6 +236,7 @@ div[id*="UpdateProgress"] {
 }
 
 /* Time Picker */
+
 div[id*="_TimePicker"] > div,
 div[id*="_TimePicker"] > select {
   display: block;
@@ -249,7 +250,7 @@ div[id*="_TimePicker"] > select {
 
 .checks-data-forms .ajax__numericupdown_container {
   position: relative;
-  display: block;
+  display: inline-block;
   width: auto;
   overflow: visible;
 }
@@ -264,7 +265,7 @@ div[id*="_TimePicker"] > select {
 }
 
 .checks-data-forms .ajax__numericupdown_container td {
-  display: table-cell;
+  display: inline-block;
   width: auto;
   line-height: 1.618em;
 }
@@ -286,11 +287,14 @@ div[id*="_TimePicker"] > select {
 }
 
 .ajax__numericupdown_container input[id*="bDown"] {
-  bottom: .62rem;
-  border-top: 1px solid #fff;
+  bottom: 0;
 }
 
 /* Date Picker */
+input.DRTextBox {
+  border: 2px solid #ccc;
+  padding: 0.26em;
+}
 
 .DRCalendar {
   background: #fff;
@@ -314,6 +318,15 @@ div[id*="_TimePicker"] > select {
 .DRCalendar table tr,
 .DRCalendar table tr td  {
   width: auto;
+}
+
+/* Slider */
+.ajax__slider_h_handle {
+  background: #0860b8;
+}
+
+.ajax__slider_h_handle img {
+  display: none;
 }
 
 /* Health Checks List */
@@ -351,11 +364,12 @@ div[id*="_TimePicker"] > select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  /*-webkit-box-pack: center;
-  justify-content: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;*/
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
 }
 
 .health-checks-table a:hover {
@@ -373,8 +387,8 @@ div[id*="_TimePicker"] > select {
 /* Wrapping element */
 
 .body-content {
-  padding-left: 15px;
-  padding-right: 15px;
+  width: 100%;
+  max-width: 1200px !important;
 }
 
 /* Responsive: Portrait tablets and up */
@@ -383,6 +397,80 @@ div[id*="_TimePicker"] > select {
   .body-content {
     padding: 0;
   }
+}
+
+/* Web Wakeup */
+.pc-callout {
+  text-align: center;
+}
+
+.pc-callout input[type="text"] {
+  display: block;
+  width: 100%;
+  padding: 0.26em;
+  margin: 1rem 0;
+  text-align: center;
+  border: 0;
+  border-bottom: 2px solid #ccc;
+  transition: 400ms ease;
+}
+
+.pc-callout input[type="text"]:focus {
+  border-color: #0860b8;
+}
+
+.pc-meta {
+  text-align: center;
+  margin-top: 1rem;
+  padding: 0.618rem;
+  background-color: #f9f9f9;
+  border: 2px solid #ccc;
+}
+
+.pc-callout--lookup {
+  -webkit-appearance: none !important;
+  background: transparent;
+  padding: .42em;
+  border: 0;
+  border-bottom: 2px solid #0860b8;
+  color: #0860b8;
+}
+
+.pc-callout--lookup-icon {
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+}
+
+.pc-check-status,
+.pc-wake-up {
+  -webkit-appearance: none !important;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: 700;
+  border: 0;
+  transition: background 400ms ease;
+}
+
+.pc-check-status {
+  background: #9cbfe3;
+  color: #0860b8;
+}
+
+.pc-check-status:hover {
+  background: #0860b8;
+  color: #fff;
+}
+
+.pc-wake-up {
+  background: #0860b8;
+  color: #fff;
+}
+
+.pc-wake-up:hover {
+  background: #073971;
 }
 
 /* Navbar */
