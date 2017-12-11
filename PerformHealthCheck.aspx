@@ -121,11 +121,11 @@
 
             var added = function(event) {
                 if (event.animationName == 'nodeInserted') {
-
+                  
                     var rows = $('#MainContent_Composite1_tblForm').find('tr'),
                         timePicker = $('[id*="TimePicker"]'),
                         numContainer = $('.ajax__numericupdown_container');
-
+                        
                     rows.each(function () {
                         var cells = $(this).children('td'),
                             allCells = $(this).closest('.Adaptiva_Group').find('td');
@@ -158,10 +158,10 @@
                     if (timePicker.length > 0) {
                       timePicker.find('*').removeAttr('style');
                     }
-
+                    
                 }
             };
-
+            
             document.addEventListener('animationstart', added, false);
             document.addEventListener('MSAnimationStart', added, false);
             document.addEventListener('webkitAnimationStart', added, false);
