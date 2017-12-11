@@ -739,14 +739,72 @@ input.DRTextBox {
   width: 268px;
 }
 
-/* ada-navbar */
-
-.ada-navbar-brand .logo-1 {
-  fill: #fff;
+/* PC Selector */
+.pc-list {
+  width: 100%;
 }
 
-.ada-navbar-brand .logo-2 {
-  fill: #0860b8;
+.pc-list * {
+  text-align: left
+}
+
+.pc-list td {
+  padding: 1rem;
+  color: #666;
+  transition: 300ms ease;
+}
+
+.pc-list tr {
+  border-bottom: 2px solid #eee;
+  transition: 300ms ease;
+  cursor: pointer;
+}
+
+.pc-list tr:hover {
+  border-bottom: 2px solid #0860b8;
+}
+
+.pc-list tr:hover td {
+  color: #333;
+}
+
+.pc-list tr.pc-list--head {
+  cursor: default;
+  background: #0860b8;
+  border-bottom: 0
+}
+
+.pc-list--head th {
+  padding: 1rem;
+  color: #fff;
+}
+
+.pc-search {
+  padding: 1.618rem;
+  background-color: #041d39;
+}
+
+.pc-search--label {
+  color: #fff;
+}
+
+.pc-search--box {
+  display: inline-block;
+  padding: 0.618rem;
+  border: 0;
+  border-bottom: 2px solid #fff;
+  color: #fff;
+  font-size: 1rem;
+  width: 75%;
+  margin-right: 1em;
+}
+
+@media screen and (max-width:560px) {
+  .pc-search--box {
+    width: 100%;
+    margin-bottom: 1.618rem;
+    border: 2px solid #fff;
+  }
 }
 
 /* Jumbotron header */
