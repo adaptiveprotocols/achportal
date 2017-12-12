@@ -700,6 +700,10 @@ input.DRTextBox {
   cursor: pointer;
 }
 
+.pc-update--progress img {
+  width: 100%;
+}
+
 .pc-check-status, .pc-wake-up {
   -webkit-appearance: none !important;
   display: inline-block;
@@ -762,6 +766,7 @@ input.DRTextBox {
 
 .pc-list tr:hover {
   border-bottom: 2px solid #0860b8;
+  background: #f9f9f9;
 }
 
 .pc-list tr:hover td {
@@ -772,6 +777,10 @@ input.DRTextBox {
   cursor: default;
   background: #0860b8;
   border-bottom: 0
+}
+
+.pc-list tr.pc-list--head:hover {
+  background: #0860b8;
 }
 
 .pc-list--head th {

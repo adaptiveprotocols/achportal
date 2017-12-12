@@ -1,6 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebWakeup.aspx.cs" Inherits="AdaptivaClientPortal.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="position: relative; width: 100%; height: 300px;">
+    <div style="position: relative;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div id="PCOn" class="j-col j-col-3 adaptiva-server">
@@ -37,7 +37,7 @@
                     <asp:UpdateProgress ID="UpdateProgress1" runat="server" AssociatedUpdatePanelID="UpdatePanel1">
                         <ProgressTemplate>
                             <div class="pc-update--progress">
-                                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/net_traffic.gif" />
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/Images/pc-loading.gif" />
                             </div>
                             <div class="pc-update--timer" id="timer"></div>
                         </ProgressTemplate>
