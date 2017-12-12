@@ -50,13 +50,13 @@
       <nav class="ada-nav">
         <ul>
           <li class="ada-nav--item">
-            <a runat="server" href="~/Default.aspx" title="Home">Products</a>
+            <a runat="server" href="~/Default.aspx" title="Home">Home</a>
           </li>
           <li class="ada-nav--item">
-            <a runat="server" href="~/ClientHealth.aspx">Client Health</a>
+            <a runat="server" href="~/ClientHealth.aspx" title="Client Health">Client Health</a>
           </li>
           <li class="ada-nav--item">
-            <a runat="server" href="~/WebWakeup.aspx">Web Wakeup</a>
+            <a runat="server" href="~/WebWakeup.aspx" title="Web Wakeup">Web Wakeup</a>
           </li>
         </ul>
       </nav>
