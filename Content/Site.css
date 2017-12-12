@@ -311,6 +311,10 @@ table.checks-table>tbody>tr>td>a {
   transition: 300ms ease;
 }
 
+table.checks-table>tbody>tr>td>a table {
+  display: block;
+}
+
 table.checks-table>tbody>tr>td>a:hover, table.checks-table>tbody>tr>td>a:focus {
   outline: none;
   text-decoration: none;
