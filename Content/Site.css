@@ -336,7 +336,7 @@ table.checks-table>tbody>tr>td>a>div {
 }
 
 .health-check--icon td img {
-  width: 68px;
+  max-height: 68px;
 }
 
 .health-check--title {
