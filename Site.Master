@@ -1,4 +1,4 @@
-﻿﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="AdaptivaClientPortal.SiteMaster" %>
+﻿<%@ master language="C#" autoeventwireup="true" codebehind="Site.master.cs" inherits="AdaptivaClientPortal.SiteMaster" %>
 <!DOCTYPE html>
 <html lang="en">
 <head runat="server">
