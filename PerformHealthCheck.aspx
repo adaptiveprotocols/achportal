@@ -11,7 +11,9 @@
         </Triggers>
     </asp:UpdatePanel>
     <div class="j-row">
-        <h1 style="font-size: 2.618rem; font-weight: bolder; margin: 2.618rem 0; display: block;"><asp:ImageButton ID="btnBack" CssClass="back-button" OnClientClick="JavaScript:window.history.back(1);return false;" runat="server" ImageUrl="~/Images/Back.png" Height="30px"/><%=Title%></h3>
+        <h1 style="font-size: 2.618rem; font-weight: bolder; margin: 2.618rem 0; display: block;">
+            <asp:ImageButton ID="btnBack" CssClass="back-button" OnClientClick="JavaScript:window.history.back(1);return false;" runat="server" ImageUrl="~/Images/Back.png" Height="30px"/><%=Title%>
+            </h1>
     </div>
 
     <asp:UpdateProgress runat="server" AssociatedUpdatePanelID="UpdatePanel2">
@@ -120,11 +122,11 @@
 
             var added = function(event) {
                 if (event.animationName == 'nodeInserted') {
-
+                  
                     var rows = $('#MainContent_Composite1_tblForm').find('tr'),
                         timePicker = $('[id*="TimePicker"]'),
                         numContainer = $('.ajax__numericupdown_container');
-
+                        
                     rows.each(function () {
                         var cells = $(this).children('td'),
                             allCells = $(this).closest('.Adaptiva_Group').find('td');
@@ -160,10 +162,10 @@
                     if (timePicker.length > 0) {
                       timePicker.find('*').removeAttr('style');
                     }
-
+                    
                 }
             };
-
+            
             document.addEventListener('animationstart', added, false);
             document.addEventListener('MSAnimationStart', added, false);
             document.addEventListener('webkitAnimationStart', added, false);

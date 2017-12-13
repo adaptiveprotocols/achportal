@@ -1,4 +1,4 @@
-<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AdaptivaClientPortal.WebForm1" %>
+﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="AdaptivaClientPortal.WebForm1" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="jumbotron">
       <h1>Adaptiva Web Portal</h1>
@@ -14,5 +14,4 @@
           <span>Web Wakeup</span>
         </a>
     </div>
-    <asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
 </asp:Content>
