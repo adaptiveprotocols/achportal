@@ -32,7 +32,7 @@
   </asp:ScriptManager>
   <section class="ada-navbar">
     <div class="content vertical-center-row space-between">
-      <a class="ada-logo" href="~/">
+      <a class="ada-logo" runat="server" href="~/Default">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1747.17 406.74" width="110" height="26">
           <title>Adaptiva</title>
           <g id="Layer_2" data-name="Layer 2">
@@ -62,14 +62,9 @@
       </nav>
     </div>
   </section>
-  <div class="jumbotron">
-    <h1>Adaptiva Portal</h1>
-    <p class="lead">Adaptiva Client Health Portal is a web portal to analyse and remediate client issues.</p>
-  </div>
   <div class="container body-content">
     <asp:ContentPlaceHolder ID="MainContent" runat="server"></asp:ContentPlaceHolder>
-    <hr />
-    <footer>
+    <footer class="portal-footer">
       <p>&copy; <%: DateTime.Now.Year %> - Adaptiva</p>
     </footer>
   </div>

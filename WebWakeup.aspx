@@ -1,6 +1,10 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="WebWakeup.aspx.cs" Inherits="AdaptivaClientPortal.WebForm2" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <div style="position: relative;">
+    <div class="jumbotron">
+      <h1>Web Wakeup</h1>
+      <p>Check for status and wake machines from the web</p>
+    </div>
+    <div class="j-row" style="position: relative;">
         <asp:UpdatePanel ID="UpdatePanel1" runat="server">
             <ContentTemplate>
                 <div id="PCOn" class="j-col j-col-3 adaptiva-server">

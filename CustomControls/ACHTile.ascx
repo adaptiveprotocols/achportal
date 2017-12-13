@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="ACHTile.ascx.cs" Inherits="AdaptivaClientPortal.ACHTile" %>
 <a class="health-check" id="aRef" href="<%=PageLoadURL%>?id=<%=ID%>">
     <asp:Panel ID="Panel1" runat="server" BackColor="White">
-        <asp:Table ID="Table1" runat="server" CssClass="health-check--icon" HorizontalAlign="Center">
+        <asp:Table ID="Table1" runat="server" CssClass="health-check--icon">
             <asp:TableRow>
                 <asp:TableCell>
                     <asp:Image ID="imgHealthLogo" runat="server" ImageUrl="../Images/Health_Check.png" />

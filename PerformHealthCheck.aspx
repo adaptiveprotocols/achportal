@@ -11,8 +11,7 @@
         </Triggers>
     </asp:UpdatePanel>
     <div class="j-row">
-        <asp:ImageButton ID="btnBack" OnClientClick="JavaScript:window.history.back(1);return false;" runat="server" ImageUrl="~/Images/Back.png" Height="30px" />
-        <h3 style="font-size: 36px; font-weight: bolder; margin-bottom: 2.618rem; display: inline-block; padding-left: 6px;"><%=Title%></h3>
+        <h1 style="font-size: 2.618rem; font-weight: bolder; margin: 2.618rem 0; display: block;"><asp:ImageButton ID="btnBack" CssClass="back-button" OnClientClick="JavaScript:window.history.back(1);return false;" runat="server" ImageUrl="~/Images/Back.png" Height="30px"/><%=Title%></h3>
     </div>
 
     <asp:UpdateProgress runat="server" AssociatedUpdatePanelID="UpdatePanel2">
@@ -121,11 +120,11 @@
 
             var added = function(event) {
                 if (event.animationName == 'nodeInserted') {
-                  
+
                     var rows = $('#MainContent_Composite1_tblForm').find('tr'),
                         timePicker = $('[id*="TimePicker"]'),
                         numContainer = $('.ajax__numericupdown_container');
-                        
+
                     rows.each(function () {
                         var cells = $(this).children('td'),
                             allCells = $(this).closest('.Adaptiva_Group').find('td');
@@ -137,15 +136,18 @@
                             cells.addClass('j-col j-col-2 wrap');
                         } else {
                             $(this).find('td:first-child')
-                              .addClass('j-col j-col-3 wrap')
+                              .addClass('j-col j-col-4 wrap')
                               .next()
-                              .addClass('j-col j-col-9');
+                              .addClass('j-col j-col-8');
                         }
                         if (cells.children('input[type="radio"]')) {
                             $(this).find('input[type="radio"]')
                               .parent('td')
                               .removeClass('j-col-3 j-col-9')
                               .addClass('j-col j-col-6 wrap has-radio');
+                        }
+                        if ($(this).closest('table').is('.ajax__numericupdown_container')) {
+                            cells.removeClass('j-col j-col-2 j-col-3 j-col-4 j-col-8 j-col-9 j-col-12 wrap');
                         }
                     });
                     // Strip style attribute from certain elements
@@ -158,10 +160,10 @@
                     if (timePicker.length > 0) {
                       timePicker.find('*').removeAttr('style');
                     }
-                    
+
                 }
             };
-            
+
             document.addEventListener('animationstart', added, false);
             document.addEventListener('MSAnimationStart', added, false);
             document.addEventListener('webkitAnimationStart', added, false);

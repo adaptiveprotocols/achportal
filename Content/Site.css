@@ -263,6 +263,40 @@ section.ada-navbar.is-scrolled li.ada-nav--item a.button {
   }
 }
 
+/* Default */
+.home-link {
+  display: block;
+  padding: 6.8rem !important;
+  background: #cedff1;
+  transition: 300ms ease;
+  -ms-flex-item-align: stretch;align-self: stretch;
+  position: relative;
+}
+
+.home-link:hover {
+  background: #ebf2f9;
+}
+
+.home-link:first-child {
+  border-right: 2px solid #0860b8;
+}
+
+@media screen and (max-width: 640px) {
+  .home-link:first-child {
+    border-right: 0;
+  }
+}
+
+.home-link span {
+  position: absolute;
+  bottom: 1.618em;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0860b8;
+}
+
 /* Health Checks Table */
 
 table.checks-table {
@@ -351,6 +385,10 @@ table.checks-table>tbody>tr>td>a>div {
 
 form[action*="PerformHealthCheck"] {
   background: #f9f9f9;
+}
+
+.back-button {
+  margin-right: 1rem;
 }
 
 .health-check--form, .health-check--results {
@@ -485,6 +523,17 @@ div[id*="UpdateProgress"] {
 .health-check--results tr.run-check td {
   display: block;
   width: 100%;
+}
+
+.run-on--input input {
+  border: 2px solid #ccc;
+  outline: 0;
+  padding: 0.42em;
+}
+
+.run-on--input input:focus {
+  border: 2px solid #0860b8;
+  outline: 0;
 }
 
 .run-on--lookup input {
@@ -679,6 +728,7 @@ input.DRTextBox {
 
 .pc-callout input[type="text"]:focus {
   border-color: #0860b8;
+  outline: 0;
 }
 
 .pc-meta {
@@ -829,6 +879,7 @@ input.DRTextBox {
   position: relative;
   text-align: center;
   color: #fff;
+  margin-bottom: 2.618rem;
 }
 
 .jumbotron::before, .jumbotron::after {
@@ -866,7 +917,7 @@ input.DRTextBox {
 .search-bar--input {
   display: block;
   width: 100%;
-  padding: 1em 2em 1em 0;
+  padding: 0.618em 1.618em 0.618em 0;
   border-top: 0;
   border-left: 0;
   border-right: 0;
@@ -878,6 +929,11 @@ input.DRTextBox {
 
 .search-bar--input:focus {
   border-bottom: 2px solid #0860b8;
+  outline: none
+}
+
+.search--button {
+  padding: 0.85rem 1.618rem !important;
 }
 
 .modal {
@@ -1210,7 +1266,8 @@ html, body {
   width: 300px;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
   margin-right: 0.618rem;
 }
 
@@ -1220,4 +1277,12 @@ input[type="text"] {
 
 input[type="text"], select {
   border-color: #ccc;
+}
+
+/* Portal Footer */
+
+.portal-footer {
+  padding: 2.618rem 1rem;
+  margin-top: 2.618rem;
+  border-top: 2px solid #ddd;
 }
