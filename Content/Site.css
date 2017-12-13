@@ -292,7 +292,7 @@ section.ada-navbar.is-scrolled li.ada-nav--item a.button {
   bottom: 1.618em;
   left: 50%;
   transform: translateX(-50%);
-  font-size: 1rem;
+  font-size: 1.618rem;
   font-weight: 700;
   color: #0860b8;
 }
