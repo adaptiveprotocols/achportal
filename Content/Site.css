@@ -680,6 +680,7 @@ input.DRTextBox {
   -webkit-box-pack: start;
   -ms-flex-pack: start;
   justify-content: flex-start;
+  min-height: 68px;
 }
 
 .health-checks-table a:hover {
@@ -857,9 +858,14 @@ input.DRTextBox {
   border: 0;
   border-bottom: 2px solid #fff;
   color: #fff;
+  background-color: transparent;
   font-size: 1rem;
   width: 75%;
   margin-right: 1em;
+}
+
+.pc-search--box::placeholder {
+  color: #ebf2f9;
 }
 
 @media screen and (max-width:560px) {

@@ -11,8 +11,8 @@
     <form id="form1" runat="server">
     <div style="text-align: center;width:100%;height:100%;">
       <div class="pc-search">
-        <asp:TextBox ID="tbxSearch" CssClass="pc-search--box" runat="server"></asp:TextBox>
-        <asp:Button ID="btnSearch" CssClass="pc-search--btn button" runat="server" Text="Search" OnClick="btnSearch_Click" />
+        <asp:TextBox ID="tbxSearch" CssClass="pc-search--box" placeholder="Filter devices" runat="server"></asp:TextBox>
+        <asp:Button ID="btnSearch" CssClass="pc-search--btn button" runat="server" Text="Filter" OnClick="btnSearch_Click" />
       </div>
       <asp:Table ID="tblPCSelector" CssClass="pc-list" runat="server" HorizontalAlign="Center">
         <asp:TableHeaderRow CssClass="pc-list--head">

@@ -24,9 +24,9 @@
                 <asp:Panel ID="panSearch" DefaultButton="btnSearch" runat="server">
                     <div class="j-col j-col-6 vertical-center-row align-bottom">
                         <div class="j-col j-col-9 search-bar">
-                            <asp:TextBox ID="tbxSearch" runat="server" CssClass="search-bar--input"></asp:TextBox>
+                            <asp:TextBox ID="tbxSearch" runat="server" placeholder="Filter health checks" CssClass="search-bar--input"></asp:TextBox>
                         </div>
-                        <asp:Button ID="btnSearch" runat="server" Text="Search" OnClick="btnSearch_Click" CssClass="j-col j-col-3 button search--button" />
+                        <asp:Button ID="btnSearch" runat="server" Text="Filter" OnClick="btnSearch_Click" CssClass="j-col j-col-3 button search--button" />
                     </div>
                 </asp:Panel>
             </div>
